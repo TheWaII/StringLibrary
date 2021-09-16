@@ -1,0 +1,3 @@
+/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir
