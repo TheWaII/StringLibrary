@@ -5,7 +5,6 @@
 #ifndef STRINGLIBRARY_STRING_H
 #define STRINGLIBRARY_STRING_H
 
-
 class String {
 
     const char *string{};

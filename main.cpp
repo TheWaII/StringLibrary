@@ -6,14 +6,17 @@ int main() {
 
     String myString("Hello");
 
-    myString.concatenate("World");
+
+
+
+    //myString.concatenate("World");
 
     //myString.concatenate(myString);
 
-    String otherString(myString);
-    String yetAnotherString("AnotherWorld");
+    //String otherString(myString);
+    //String yetAnotherString("AnotherWorld");
 
-    otherString = yetAnotherString;
+    //otherString = yetAnotherString;
 
     //std::cout << otherString.c_str();
 
