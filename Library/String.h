@@ -5,21 +5,25 @@
 #ifndef STRINGLIBRARY_STRING_H
 #define STRINGLIBRARY_STRING_H
 
-class String {
-
-    const char *string{};
-
-public:
-
-    String();
-
-    explicit String(const char *string);
-
-    void concatenate(const char *string);
-
-    ~String() { delete string; }
-
-};
+namespace myString {
 
 
+    class String {
+
+
+    public:
+
+        char *newString{};
+
+        String();
+
+        explicit String(const char *string);
+
+        static void concatenate(const String& string);
+
+        ~String() { delete newString; }
+
+    };
+
+}
 #endif //STRINGLIBRARY_STRING_H

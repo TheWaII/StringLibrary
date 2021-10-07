@@ -1,12 +1,12 @@
-#include <iostream>
 #include "Library/String.h"
 
 int main() {
 
+    myString::String myString("Hello");
 
-    String myString("Hello");
+    myString::String::concatenate((const myString::String &) "World");
 
-
+    myString::String::concatenate(myString);
 
 
     //myString.concatenate("World");
