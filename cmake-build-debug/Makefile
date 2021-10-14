@@ -123,32 +123,32 @@ StringLibrary/fast:
 	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/build
 .PHONY : StringLibrary/fast
 
-Library/String.o: Library/String.cpp.o
+Library/myString.o: Library/myString.cpp.o
 
-.PHONY : Library/String.o
+.PHONY : Library/myString.o
 
 # target to build an object file
-Library/String.cpp.o:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/String.cpp.o
-.PHONY : Library/String.cpp.o
+Library/myString.cpp.o:
+	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.o
+.PHONY : Library/myString.cpp.o
 
-Library/String.i: Library/String.cpp.i
+Library/myString.i: Library/myString.cpp.i
 
-.PHONY : Library/String.i
+.PHONY : Library/myString.i
 
 # target to preprocess a source file
-Library/String.cpp.i:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/String.cpp.i
-.PHONY : Library/String.cpp.i
+Library/myString.cpp.i:
+	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.i
+.PHONY : Library/myString.cpp.i
 
-Library/String.s: Library/String.cpp.s
+Library/myString.s: Library/myString.cpp.s
 
-.PHONY : Library/String.s
+.PHONY : Library/myString.s
 
 # target to generate assembly for a file
-Library/String.cpp.s:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/String.cpp.s
-.PHONY : Library/String.cpp.s
+Library/myString.cpp.s:
+	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.s
+.PHONY : Library/myString.cpp.s
 
 main.o: main.cpp.o
 
@@ -186,9 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... StringLibrary"
-	@echo "... Library/String.o"
-	@echo "... Library/String.i"
-	@echo "... Library/String.s"
+	@echo "... Library/myString.o"
+	@echo "... Library/myString.i"
+	@echo "... Library/myString.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

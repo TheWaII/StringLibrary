@@ -70,29 +70,29 @@ CMakeFiles/StringLibrary.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringLibrary.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/CLionProjects/StringLibrary/main.cpp -o CMakeFiles/StringLibrary.dir/main.cpp.s
 
-CMakeFiles/StringLibrary.dir/Library/String.cpp.o: CMakeFiles/StringLibrary.dir/flags.make
-CMakeFiles/StringLibrary.dir/Library/String.cpp.o: ../Library/String.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/StringLibrary.dir/Library/String.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/Library/String.cpp.o -c /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/String.cpp
+CMakeFiles/StringLibrary.dir/Library/myString.cpp.o: CMakeFiles/StringLibrary.dir/flags.make
+CMakeFiles/StringLibrary.dir/Library/myString.cpp.o: ../Library/myString.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.o -c /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp
 
-CMakeFiles/StringLibrary.dir/Library/String.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StringLibrary.dir/Library/String.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/String.cpp > CMakeFiles/StringLibrary.dir/Library/String.cpp.i
+CMakeFiles/StringLibrary.dir/Library/myString.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StringLibrary.dir/Library/myString.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp > CMakeFiles/StringLibrary.dir/Library/myString.cpp.i
 
-CMakeFiles/StringLibrary.dir/Library/String.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringLibrary.dir/Library/String.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/String.cpp -o CMakeFiles/StringLibrary.dir/Library/String.cpp.s
+CMakeFiles/StringLibrary.dir/Library/myString.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringLibrary.dir/Library/myString.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.s
 
 # Object files for target StringLibrary
 StringLibrary_OBJECTS = \
 "CMakeFiles/StringLibrary.dir/main.cpp.o" \
-"CMakeFiles/StringLibrary.dir/Library/String.cpp.o"
+"CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
 
 # External object files for target StringLibrary
 StringLibrary_EXTERNAL_OBJECTS =
 
 StringLibrary: CMakeFiles/StringLibrary.dir/main.cpp.o
-StringLibrary: CMakeFiles/StringLibrary.dir/Library/String.cpp.o
+StringLibrary: CMakeFiles/StringLibrary.dir/Library/myString.cpp.o
 StringLibrary: CMakeFiles/StringLibrary.dir/build.make
 StringLibrary: CMakeFiles/StringLibrary.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable StringLibrary"

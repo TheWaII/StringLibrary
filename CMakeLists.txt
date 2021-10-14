@@ -3,4 +3,4 @@ project(StringLibrary)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(StringLibrary main.cpp Library/String.cpp Library/String.h)
+add_executable(StringLibrary main.cpp Library/myString.cpp Library/myString.h)

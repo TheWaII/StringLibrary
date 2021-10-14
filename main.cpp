@@ -1,24 +1,20 @@
-#include "Library/String.h"
+#include <iostream>
+#include "Library/myString.h"
 
 int main() {
 
-    myString::String myString("Hello");
+    String::myString newString("Hello");
 
-    myString::String::concatenate((const myString::String &) "World");
+    newString.Concatenate("World");
 
-    myString::String::concatenate(myString);
+    String::myString otherString(newString);
 
+    String::myString yetAnotherString("AnotherWorld");
 
-    //myString.concatenate("World");
+    otherString = yetAnotherString;
 
-    //myString.concatenate(myString);
+    std::cout << otherString.c_str() << std::endl;
 
-    //String otherString(myString);
-    //String yetAnotherString("AnotherWorld");
-
-    //otherString = yetAnotherString;
-
-    //std::cout << otherString.c_str();
-
+    std::cout << "string length: "  << newString.getLength() << std::endl;
     return 0;
 }

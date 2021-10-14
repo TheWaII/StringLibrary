@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/StringLibrary.dir/Library/String.cpp.o"
+  "CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
   "CMakeFiles/StringLibrary.dir/main.cpp.o"
   "StringLibrary"
   "StringLibrary.pdb"
