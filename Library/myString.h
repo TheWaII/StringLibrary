@@ -12,8 +12,8 @@ namespace String {
     class myString {
 
     private:
-        char *ptr{};
-        size_t size{};
+        char *newString{};
+        size_t stringSize{};
 
     public:
 
