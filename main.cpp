@@ -15,6 +15,6 @@ int main() {
 
     std::cout << otherString.c_str() << std::endl;
 
-    std::cout << "string length: "  << newString.getLength() << std::endl;
+    std::cout << "string length: "  << otherString.getLength() << std::endl;
     return 0;
 }
