@@ -3,4 +3,7 @@ project(StringLibrary)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(StringLibrary main.cpp Library/myString.cpp Library/myString.h)
+add_subdirectory (src)
+add_subdirectory (tests)
+enable_testing ()
+add_test (NAME MyTest COMMAND Test)

@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/thewa/Desktop/StringLibrary
+CMAKE_SOURCE_DIR = /mnt/c/Users/thewa/CLionProjects/StringLibrary
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,33 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,71 +122,43 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named StringLibrary
+# Target rules for targets named acic
 
 # Build rule for target.
-StringLibrary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 StringLibrary
-.PHONY : StringLibrary
+acic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 acic
+.PHONY : acic
 
 # fast build rule for target.
-StringLibrary/fast:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/build
-.PHONY : StringLibrary/fast
+acic/fast:
+	$(MAKE) -f src/CMakeFiles/acic.dir/build.make src/CMakeFiles/acic.dir/build
+.PHONY : acic/fast
 
-Library/myString.o: Library/myString.cpp.o
+#=============================================================================
+# Target rules for targets named lib
 
-.PHONY : Library/myString.o
+# Build rule for target.
+lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 lib
+.PHONY : lib
 
-# target to build an object file
-Library/myString.cpp.o:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.o
-.PHONY : Library/myString.cpp.o
+# fast build rule for target.
+lib/fast:
+	$(MAKE) -f src/CMakeFiles/lib.dir/build.make src/CMakeFiles/lib.dir/build
+.PHONY : lib/fast
 
-Library/myString.i: Library/myString.cpp.i
+#=============================================================================
+# Target rules for targets named Test
 
-.PHONY : Library/myString.i
+# Build rule for target.
+Test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Test
+.PHONY : Test
 
-# target to preprocess a source file
-Library/myString.cpp.i:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.i
-.PHONY : Library/myString.cpp.i
-
-Library/myString.s: Library/myString.cpp.s
-
-.PHONY : Library/myString.s
-
-# target to generate assembly for a file
-Library/myString.cpp.s:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/Library/myString.cpp.s
-.PHONY : Library/myString.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/StringLibrary.dir/build.make CMakeFiles/StringLibrary.dir/main.cpp.s
-.PHONY : main.cpp.s
+# fast build rule for target.
+Test/fast:
+	$(MAKE) -f tests/CMakeFiles/Test.dir/build.make tests/CMakeFiles/Test.dir/build
+.PHONY : Test/fast
 
 # Help Target
 help:
@@ -183,15 +166,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... StringLibrary"
-	@echo "... Library/myString.o"
-	@echo "... Library/myString.i"
-	@echo "... Library/myString.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... edit_cache"
+	@echo "... test"
+	@echo "... acic"
+	@echo "... lib"
+	@echo "... Test"
 .PHONY : help
 
 

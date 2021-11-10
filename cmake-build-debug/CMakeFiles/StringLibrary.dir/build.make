@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/thewa/Desktop/StringLibrary
+CMAKE_SOURCE_DIR = /mnt/c/Users/thewa/CLionProjects/StringLibrary
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug
+CMAKE_BINARY_DIR = /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/StringLibrary.dir/depend.make
@@ -59,29 +59,29 @@ include CMakeFiles/StringLibrary.dir/flags.make
 
 CMakeFiles/StringLibrary.dir/main.cpp.o: CMakeFiles/StringLibrary.dir/flags.make
 CMakeFiles/StringLibrary.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/StringLibrary.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/main.cpp.o -c /mnt/c/Users/thewa/Desktop/StringLibrary/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/StringLibrary.dir/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/main.cpp.o -c /mnt/c/Users/thewa/CLionProjects/StringLibrary/main.cpp
 
 CMakeFiles/StringLibrary.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StringLibrary.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/Desktop/StringLibrary/main.cpp > CMakeFiles/StringLibrary.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/CLionProjects/StringLibrary/main.cpp > CMakeFiles/StringLibrary.dir/main.cpp.i
 
 CMakeFiles/StringLibrary.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringLibrary.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/Desktop/StringLibrary/main.cpp -o CMakeFiles/StringLibrary.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/CLionProjects/StringLibrary/main.cpp -o CMakeFiles/StringLibrary.dir/main.cpp.s
 
 CMakeFiles/StringLibrary.dir/Library/myString.cpp.o: CMakeFiles/StringLibrary.dir/flags.make
 CMakeFiles/StringLibrary.dir/Library/myString.cpp.o: ../Library/myString.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.o -c /mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.o -c /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp
 
 CMakeFiles/StringLibrary.dir/Library/myString.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/StringLibrary.dir/Library/myString.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.cpp > CMakeFiles/StringLibrary.dir/Library/myString.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp > CMakeFiles/StringLibrary.dir/Library/myString.cpp.i
 
 CMakeFiles/StringLibrary.dir/Library/myString.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/StringLibrary.dir/Library/myString.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.cpp -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp -o CMakeFiles/StringLibrary.dir/Library/myString.cpp.s
 
 # Object files for target StringLibrary
 StringLibrary_OBJECTS = \
@@ -95,7 +95,7 @@ StringLibrary: CMakeFiles/StringLibrary.dir/main.cpp.o
 StringLibrary: CMakeFiles/StringLibrary.dir/Library/myString.cpp.o
 StringLibrary: CMakeFiles/StringLibrary.dir/build.make
 StringLibrary: CMakeFiles/StringLibrary.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable StringLibrary"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable StringLibrary"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/StringLibrary.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -108,6 +108,6 @@ CMakeFiles/StringLibrary.dir/clean:
 .PHONY : CMakeFiles/StringLibrary.dir/clean
 
 CMakeFiles/StringLibrary.dir/depend:
-	cd /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/thewa/Desktop/StringLibrary /mnt/c/Users/thewa/Desktop/StringLibrary /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug /mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/thewa/CLionProjects/StringLibrary /mnt/c/Users/thewa/CLionProjects/StringLibrary /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug /mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/StringLibrary.dir/depend
 

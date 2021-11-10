@@ -5,41 +5,51 @@
 		<Option title="StringLibrary"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\tests\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="StringLibrary">
-				<Option output="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/StringLibrary" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug"/>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="acic">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/acic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,15 +63,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 StringLibrary"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 acic"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="StringLibrary/fast">
-				<Option output="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/StringLibrary" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug"/>
+			<Target title="acic/fast">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/acic" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -75,24 +85,184 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 StringLibrary/fast"/>
-					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 acic/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lib">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/liblib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 lib"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lib/fast">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/liblib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 lib/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Test">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_TEST_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add directory="/src"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 Test"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Test/fast">
+				<Option output="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DBOOST_TEST_DYN_LINK"/>
+					<Add option="-DBOOST_FILESYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_ALL_NO_LIB"/>
+					<Add option="-DBOOST_SYSTEM_DYN_LINK"/>
+					<Add option="-DBOOST_UNIT_TEST_FRAMEWORK_DYN_LINK"/>
+					<Add directory="/src"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 Test/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.cpp">
-			<Option target="StringLibrary"/>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/lib/myString.cpp">
+			<Option target="lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.h">
-			<Option target="StringLibrary"/>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/lib/myString.h">
+			<Option target="lib"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/thewa/Desktop/StringLibrary/main.cpp">
-			<Option target="StringLibrary"/>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/src/main.cpp">
+			<Option target="acic"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/thewa/Desktop/StringLibrary/CMakeLists.txt">
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/tests/stringLibraryTests.cpp">
+			<Option target="Test"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tests\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/BoostDetectToolset-1.71.0.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\Boost-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0/boost_headers-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_headers-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/boost_system-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_system-1.71.0/libboost_system-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_system-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/boost_filesystem-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/boost_filesystem-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_filesystem-1.71.0/libboost_filesystem-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_filesystem-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/boost_unit_test_framework-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-shared.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/thewa/CLionProjects/StringLibrary/../../../../../../usr/lib/x86_64-linux-gnu/cmake/boost_unit_test_framework-1.71.0/libboost_unit_test_framework-variant-static.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\boost_unit_test_framework-1.71.0\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

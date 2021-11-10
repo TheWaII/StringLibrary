@@ -6,6 +6,7 @@
 #define STRINGLIBRARY_MYSTRING_H
 
 #include <cstdio>
+#include "gtest/gtest.h"
 
 namespace String {
 

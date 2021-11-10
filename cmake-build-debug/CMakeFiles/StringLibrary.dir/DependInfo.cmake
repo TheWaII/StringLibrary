@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/c/Users/thewa/Desktop/StringLibrary/Library/myString.cpp" "/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
-  "/mnt/c/Users/thewa/Desktop/StringLibrary/main.cpp" "/mnt/c/Users/thewa/Desktop/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/main.cpp.o"
+  "/mnt/c/Users/thewa/CLionProjects/StringLibrary/Library/myString.cpp" "/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/Library/myString.cpp.o"
+  "/mnt/c/Users/thewa/CLionProjects/StringLibrary/main.cpp" "/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug/CMakeFiles/StringLibrary.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Library/myString.h"
+#include "../lib/myString.h"
 
 int main() {
 
@@ -26,8 +26,6 @@ int main() {
 
 #pragma endregion Aufgabenstellung Teil 2
 
-
     return 0;
-
 
 }
