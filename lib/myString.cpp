@@ -4,12 +4,15 @@
 #include "myString.h"
 #include "iostream"
 
+using namespace String;
+using fItr = myString::FwdIterator;
+using rItr = myString::RevIterator;
 
-String::myString::myString() = default;
+myString::myString() = default;
 
 #pragma region Aufgabenstellung 1
 
-String::myString::myString(const char *string) {
+myString::myString(const char *string) {
 
     stringSize = 0;
     while (string[stringSize] != '\0')
@@ -21,11 +24,9 @@ String::myString::myString(const char *string) {
     }
 
     newString[stringSize] = '\0';
-
 }
 
-
-String::myString &String::myString::Concatenate(const char *string) {
+myString &myString::Concatenate(const char *string) {
 
     size_t i = 0;
 
@@ -49,7 +50,6 @@ String::myString &String::myString::Concatenate(const char *string) {
         newString[i + stringSize] = string[i];
     }
 
-
     delete (tempString);
 
     newString[newSize] = '\0';
@@ -60,19 +60,20 @@ String::myString &String::myString::Concatenate(const char *string) {
 }
 
 //return value is const; function read only.
-const char *String::myString::c_str() const {
+const char *myString::c_str() const {
     return newString;
 }
 
-size_t String::myString::getLength() const {
+size_t myString::getLength() const {
     return stringSize;
 }
 
 
 #pragma endregion Aufgabenstellung 1
 
+#pragma region Aufgabenstellung 2
 
-String::myString::myString(const String::myString &otherString) {
+myString::myString(const myString &otherString) {
 
     unsigned int otherSize = otherString.stringSize;
     newString = new char[otherSize + 1];
@@ -84,7 +85,7 @@ String::myString::myString(const String::myString &otherString) {
     newString[otherSize] = '\0';
 }
 
-String::myString &String::myString::operator=(const String::myString &otherString) {
+myString &myString::operator=(const myString &otherString) {
 
     if (this != &otherString) {
         delete[](newString);
@@ -94,13 +95,14 @@ String::myString &String::myString::operator=(const String::myString &otherStrin
         for (unsigned int i = 0; i < stringSize; i++) {
             newString[i] = otherString.newString[i];
         }
+
         newString[stringSize] = '\0';
     }
 
     return *this;
 }
 
-String::myString::myString(String::myString &&otherString) noexcept {
+myString::myString(myString &&otherString) noexcept {
 
     if (this != &otherString) {
         newString = otherString.newString;
@@ -109,7 +111,7 @@ String::myString::myString(String::myString &&otherString) noexcept {
     }
 }
 
-String::myString &String::myString::operator=(String::myString &&otherString) noexcept {
+myString &myString::operator=(String::myString &&otherString) noexcept {
 
     if (this != &otherString) {
         delete[](newString);
@@ -122,24 +124,146 @@ String::myString &String::myString::operator=(String::myString &&otherString) no
     return *this;
 }
 
-String::myString &String::myString::operator+(const String::myString &otherString) {
+myString &String::myString::operator+(const myString &otherString) {
     Concatenate(otherString.newString);
     return *this;
 }
 
-String::myString &String::myString::operator+(const char *otherString) {
+myString &myString::operator+(const char *otherString) {
     Concatenate(otherString);
     return *this;
 }
 
-String::myString &String::myString::operator+=(const String::myString &otherString) {
+myString &myString::operator+=(const myString &otherString) {
 
     Concatenate(otherString.newString);
     return *this;
 }
 
-String::myString &String::myString::operator+=(const char *otherString) {
+myString &myString::operator+=(const char *otherString) {
     Concatenate(otherString);
     return *this;
 }
 
+#pragma endregion Aufgabenstellung 2
+
+#pragma region Aufgabenstellung 3
+
+#pragma region FwdIterator
+
+fItr myString::FwdBegin() const {
+
+    return String::myString::FwdIterator(&newString[0]);
+}
+
+fItr myString::FwdEnd() const {
+    return myString::FwdIterator(&newString[stringSize]);
+}
+
+
+fItr::FwdIterator(char *nFwdPtr) : fwdPtr(nFwdPtr) {
+
+}
+
+fItr::FwdIterator(const fItr &iterator) : fwdPtr(iterator.fwdPtr) {
+
+}
+
+bool fItr::operator==(fItr fwdIt) {
+    return !(fwdPtr - fwdIt.fwdPtr);
+}
+
+bool fItr::operator!=(fItr fwdIt) {
+    return fwdPtr - fwdIt.fwdPtr;
+}
+
+fItr &fItr::operator=(const fItr &fwdIt) {
+    fwdPtr = fwdIt.fwdPtr;
+    return *this;
+}
+
+fItr &fItr::operator++() {
+    fwdPtr += sizeof(char);
+    return *this;
+}
+
+fItr &fItr::operator++(int) {
+    fwdPtr += sizeof(char);
+    return *this;
+}
+
+fItr &fItr::operator--() {
+    fwdPtr -= sizeof(char);
+    return *this;
+}
+
+fItr &fItr::operator--(int) {
+    fwdPtr -= sizeof(int);
+    return *this;
+}
+
+char fItr::operator*() {
+    return *fwdPtr + '\0';
+}
+
+#pragma endregion FwdIterator
+
+#pragma region RevIterator
+
+rItr myString::RevBegin() const {
+
+    return rItr(&newString[stringSize]);
+}
+
+rItr myString::RevEnd() const {
+    return rItr(&newString[-1]);
+}
+
+rItr::RevIterator(char *nRevPtr) : revPtr(nRevPtr) {
+
+}
+
+rItr::RevIterator(const rItr &rIt) : revPtr(rIt.revPtr) {
+
+}
+
+bool rItr::operator==(myString::RevIterator revIt) {
+    return !(revPtr - revIt.revPtr);
+}
+
+bool rItr::operator!=(myString::RevIterator revIt) {
+    return revPtr - revIt.revPtr;
+}
+
+rItr &rItr::operator++() {
+    revPtr -= sizeof(char);
+    return *this;
+}
+
+rItr &rItr::operator++(int) {
+    revPtr -= sizeof(char);
+    return *this;
+}
+
+rItr &rItr::operator--() {
+    revPtr += sizeof(char);
+    return *this;
+}
+
+rItr &rItr::operator--(int) {
+    revPtr += sizeof(char);
+    return *this;
+}
+
+char rItr::operator*() {
+    return *revPtr + '\0';
+}
+
+rItr &rItr::operator=(const rItr &rIt) {
+    revPtr = rIt.revPtr;
+    return *this;
+}
+
+#pragma endregion RevIterator
+
+#pragma endregion Aufgabenstellung 3
