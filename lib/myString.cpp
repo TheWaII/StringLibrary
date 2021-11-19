@@ -73,16 +73,15 @@ size_t myString::getLength() const {
 
 #pragma region Aufgabenstellung 2
 
-myString::myString(const myString &otherString) {
+myString::myString(const myString &otherString) : stringSize(otherString.stringSize) {
 
-    unsigned int otherSize = otherString.stringSize;
-    newString = new char[otherSize + 1];
+    newString = new char[stringSize + 1];
 
     for (unsigned int i = 0; i < stringSize; ++i) {
         newString[i] = otherString.newString[i];
     }
 
-    newString[otherSize] = '\0';
+    newString[stringSize] = '\0';
 }
 
 myString &myString::operator=(const myString &otherString) {
@@ -105,7 +104,8 @@ myString &myString::operator=(const myString &otherString) {
 myString::myString(myString &&otherString) noexcept {
 
     if (this != &otherString) {
-        newString = otherString.newString;
+        this->newString = otherString.newString;
+        this->stringSize = otherString.stringSize;
         otherString.newString = nullptr;
         otherString.stringSize = 0;
     }
@@ -114,9 +114,8 @@ myString::myString(myString &&otherString) noexcept {
 myString &myString::operator=(String::myString &&otherString) noexcept {
 
     if (this != &otherString) {
-        delete[](newString);
-        newString = otherString.newString;
-        stringSize = otherString.stringSize;
+        this->newString = otherString.newString;
+        this->stringSize = otherString.stringSize;
         otherString.newString = nullptr;
         otherString.stringSize = 0;
     }
@@ -135,7 +134,6 @@ myString &myString::operator+(const char *otherString) {
 }
 
 myString &myString::operator+=(const myString &otherString) {
-
     Concatenate(otherString.newString);
     return *this;
 }

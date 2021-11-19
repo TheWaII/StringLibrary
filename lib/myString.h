@@ -57,7 +57,7 @@ namespace String {
 
             char *fwdPtr;
 
-            FwdIterator(char *nFwdPtr = nullptr);
+            FwdIterator(pointer nFwdPtr = nullptr);
 
             FwdIterator(const FwdIterator &it);
 
@@ -67,29 +67,23 @@ namespace String {
 
             FwdIterator &operator=(const FwdIterator &it);
 
-            FwdIterator &operator++();
+            virtual FwdIterator &operator++();
 
-            FwdIterator &operator++(int);
+            virtual FwdIterator &operator++(int);
 
-            FwdIterator &operator--();
+            virtual FwdIterator &operator--();
 
-            FwdIterator &operator--(int);
+            virtual FwdIterator &operator--(int);
 
-            char operator*();
+            virtual value_type operator*();
         };
 
-        class RevIterator {
+        class RevIterator : public FwdIterator {
 
         public:
-            using iterator_category = std::input_iterator_tag;
-            using value_type = char;
-            using difference_type = std::ptrdiff_t;
-            using pointer = char *;
-            using reference = char &;
-
             char *revPtr;
 
-            RevIterator(char *nRevPtr = nullptr);
+            RevIterator(pointer nRevPtr = nullptr);
 
             RevIterator(const RevIterator &it);
 
@@ -107,7 +101,7 @@ namespace String {
 
             RevIterator &operator--(int);
 
-            char operator*();
+            value_type operator*();
         };
 
         FwdIterator FwdBegin() const;

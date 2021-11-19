@@ -35,6 +35,7 @@ int main() {
 
     const myString test("Hello World");
 
+
     for (myString::FwdIterator it = test.FwdBegin(); it != test.FwdEnd(); ++it) {
         std::cout << *it << '\n';
     }
