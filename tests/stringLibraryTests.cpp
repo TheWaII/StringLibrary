@@ -57,7 +57,7 @@ BOOST_AUTO_TEST_SUITE(run_all_tests)
 
             String::myString expected("Hello");
 
-            String::myString actual(expected);
+            const String::myString& actual(expected);
 
             BOOST_CHECK_EQUAL(expected.c_str(), actual.c_str());
         }
@@ -69,7 +69,7 @@ BOOST_AUTO_TEST_SUITE(run_all_tests)
 
             String::myString expected("Hello");
 
-            String::myString actual = expected;
+            const String::myString& actual = expected;
 
             BOOST_CHECK_EQUAL(expected.c_str(), actual.c_str());
         }
@@ -85,7 +85,7 @@ BOOST_AUTO_TEST_SUITE(run_all_tests)
 
             String::myString actual = temp + "World";
 
-            char *expected = "HelloWorld";
+            const char *expected = "HelloWorld";
 
             BOOST_CHECK_EQUAL(expected, actual.c_str());
         }
@@ -99,7 +99,7 @@ BOOST_AUTO_TEST_SUITE(run_all_tests)
 
             String::myString actual = temp += temp2;
 
-            char *expected = "HelloWorld";
+            const char *expected = "HelloWorld";
 
             BOOST_CHECK_EQUAL(expected, actual.c_str());
         }
