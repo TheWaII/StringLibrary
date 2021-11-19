@@ -163,22 +163,17 @@ fItr::FwdIterator(char *nFwdPtr) : fwdPtr(nFwdPtr) {
 
 }
 
-fItr::FwdIterator(const fItr &iterator) : fwdPtr(iterator.fwdPtr) {
+fItr::FwdIterator(const fItr &iterator) = default;
 
-}
-
-bool fItr::operator==(fItr fwdIt) {
+bool fItr::operator==(const fItr &fwdIt) const {
     return !(fwdPtr - fwdIt.fwdPtr);
 }
 
-bool fItr::operator!=(fItr fwdIt) {
+bool fItr::operator!=(const fItr &fwdIt) const {
     return fwdPtr - fwdIt.fwdPtr;
 }
 
-fItr &fItr::operator=(const fItr &fwdIt) {
-    fwdPtr = fwdIt.fwdPtr;
-    return *this;
-}
+fItr &fItr::operator=(const fItr &fwdIt) = default;
 
 fItr &fItr::operator++() {
     fwdPtr += sizeof(char);
@@ -201,7 +196,7 @@ fItr &fItr::operator--(int) {
 }
 
 char fItr::operator*() {
-    return *fwdPtr + '\0';
+    return *fwdPtr;
 }
 
 #pragma endregion FwdIterator
@@ -221,15 +216,13 @@ rItr::RevIterator(char *nRevPtr) : revPtr(nRevPtr) {
 
 }
 
-rItr::RevIterator(const rItr &rIt) : revPtr(rIt.revPtr) {
+rItr::RevIterator(const rItr &rIt) = default;
 
-}
-
-bool rItr::operator==(myString::RevIterator revIt) {
+bool rItr::operator==(const myString::RevIterator &revIt) const {
     return !(revPtr - revIt.revPtr);
 }
 
-bool rItr::operator!=(myString::RevIterator revIt) {
+bool rItr::operator!=(const myString::RevIterator &revIt) const {
     return revPtr - revIt.revPtr;
 }
 
@@ -254,13 +247,10 @@ rItr &rItr::operator--(int) {
 }
 
 char rItr::operator*() {
-    return *revPtr + '\0';
+    return *revPtr;
 }
 
-rItr &rItr::operator=(const rItr &rIt) {
-    revPtr = rIt.revPtr;
-    return *this;
-}
+rItr &rItr::operator=(const rItr &rIt) = default;
 
 #pragma endregion RevIterator
 

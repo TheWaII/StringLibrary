@@ -57,13 +57,13 @@ namespace String {
 
             char *fwdPtr;
 
-            FwdIterator(pointer nFwdPtr = nullptr);
+            explicit FwdIterator(pointer nFwdPtr = nullptr);
 
             FwdIterator(const FwdIterator &it);
 
-            bool operator==(FwdIterator it);
+            bool operator==(const FwdIterator& it) const;
 
-            bool operator!=(FwdIterator it);
+            bool operator!=(const FwdIterator& it) const;
 
             FwdIterator &operator=(const FwdIterator &it);
 
@@ -83,25 +83,25 @@ namespace String {
         public:
             char *revPtr;
 
-            RevIterator(pointer nRevPtr = nullptr);
+            explicit RevIterator(pointer nRevPtr = nullptr);
 
             RevIterator(const RevIterator &it);
 
-            bool operator==(RevIterator it);
+            bool operator==(const RevIterator& it) const;
 
-            bool operator!=(RevIterator it);
+            bool operator!=(const RevIterator& it) const;
 
             RevIterator &operator=(const RevIterator &it);
 
-            RevIterator &operator++();
+            RevIterator &operator++() override;
 
-            RevIterator &operator++(int);
+            RevIterator &operator++(int) override;
 
-            RevIterator &operator--();
+            RevIterator &operator--() override;
 
-            RevIterator &operator--(int);
+            RevIterator &operator--(int) override;
 
-            value_type operator*();
+            value_type operator*() override;
         };
 
         FwdIterator FwdBegin() const;
