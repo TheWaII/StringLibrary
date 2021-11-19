@@ -198,6 +198,7 @@ fItr &fItr::operator--(int) {
 char fItr::operator*() {
     return *fwdPtr;
 }
+myString::FwdIterator::~FwdIterator() = default;
 
 #pragma endregion FwdIterator
 
@@ -211,6 +212,7 @@ rItr myString::RevBegin() const {
 rItr myString::RevEnd() const {
     return rItr(&newString[-1]);
 }
+myString::~myString() = default;
 
 rItr::RevIterator(char *nRevPtr) : revPtr(nRevPtr) {
 
@@ -249,6 +251,7 @@ rItr &rItr::operator--(int) {
 char rItr::operator*() {
     return *revPtr;
 }
+myString::RevIterator::~RevIterator() = default;
 
 rItr &rItr::operator=(const rItr &rIt) = default;
 

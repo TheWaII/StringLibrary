@@ -45,17 +45,18 @@ namespace String {
 
         myString &operator+=(const char *otherString);
 
+        ~myString();
+
         class FwdIterator {
 
         public:
+          using iterator_category = std::input_iterator_tag;
+          using value_type = char;
+          using difference_type = std::ptrdiff_t;
+          using pointer = char *;
+          using reference = char &;
 
-            using iterator_category = std::input_iterator_tag;
-            using value_type = char;
-            using difference_type = std::ptrdiff_t;
-            using pointer = char *;
-            using reference = char &;
-
-            char *fwdPtr;
+          char *fwdPtr;
 
             explicit FwdIterator(pointer nFwdPtr = nullptr);
 
@@ -76,6 +77,8 @@ namespace String {
             virtual FwdIterator &operator--(int);
 
             virtual value_type operator*();
+
+            ~FwdIterator();
         };
 
         class RevIterator : public FwdIterator {
@@ -102,6 +105,8 @@ namespace String {
             RevIterator &operator--(int) override;
 
             value_type operator*() override;
+
+            ~RevIterator();
         };
 
         FwdIterator FwdBegin() const;
