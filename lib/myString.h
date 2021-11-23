@@ -78,7 +78,7 @@ namespace String {
 
             virtual value_type operator*();
 
-            ~FwdIterator();
+            virtual ~FwdIterator();
         };
 
         class RevIterator : public FwdIterator {
@@ -106,7 +106,7 @@ namespace String {
 
             value_type operator*() override;
 
-            ~RevIterator();
+            ~RevIterator() override;
         };
 
         FwdIterator FwdBegin() const;
