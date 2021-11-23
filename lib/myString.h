@@ -5,118 +5,122 @@
 #ifndef STRINGLIBRARY_MYSTRING_H
 #define STRINGLIBRARY_MYSTRING_H
 
-#include <cstdio>
 #include "gtest/gtest.h"
+#include <cstdio>
 
 namespace String {
 
-    class myString {
+class myString {
 
-    private:
+private:
+  char *newString{};
+  size_t stringSize{};
 
-        char *newString{};
-        size_t stringSize{};
+public:
+  myString(){};
 
-    public:
+  explicit myString(const char *string);
 
-        myString();
+  myString &Concatenate(const char *string);
 
-        explicit myString(const char *string);
+  size_t getLength() const;
 
-        myString &Concatenate(const char *string);
+  const char *c_str() const;
 
-        size_t getLength() const;
+  myString(const myString &str);
 
-        const char *c_str() const;
+  myString &operator=(const myString &otherString);
 
-        myString(const myString &str);
+  myString(myString &&otherString) noexcept;
 
-        myString &operator=(const myString &otherString);
+  myString::operator const char *() const;
 
-        myString(myString &&otherString) noexcept;
+  myString &operator=(myString &&otherString) noexcept;
 
-        myString &operator=(myString &&otherString) noexcept;
+  myString &operator+(const myString &otherString);
 
-        myString &operator+(const myString &otherString);
+  myString &operator+(const char *otherString);
 
-        myString &operator+(const char *otherString);
+  myString &operator+=(const myString &otherString);
 
-        myString &operator+=(const myString &otherString);
+  myString &operator+=(const char *otherString);
 
-        myString &operator+=(const char *otherString);
+  ~myString();
 
-        ~myString();
+  class FwdIterator {
 
-        class FwdIterator {
+  public:
+    using iterator_category = std::input_iterator_tag;
+    using value_type = char;
+    using difference_type = std::ptrdiff_t;
+    using pointer = char *;
+    using reference = char &;
 
-        public:
-          using iterator_category = std::input_iterator_tag;
-          using value_type = char;
-          using difference_type = std::ptrdiff_t;
-          using pointer = char *;
-          using reference = char &;
+    char *fwdPtr;
 
-          char *fwdPtr;
+    explicit FwdIterator(pointer nFwdPtr = nullptr);
 
-            explicit FwdIterator(pointer nFwdPtr = nullptr);
+    FwdIterator(const FwdIterator &it);
 
-            FwdIterator(const FwdIterator &it);
+    bool operator==(const FwdIterator &it) const;
 
-            bool operator==(const FwdIterator& it) const;
+    bool operator!=(const FwdIterator &it) const;
 
-            bool operator!=(const FwdIterator& it) const;
+    FwdIterator &operator=(const FwdIterator &it);
 
-            FwdIterator &operator=(const FwdIterator &it);
+    virtual FwdIterator &operator++();
 
-            virtual FwdIterator &operator++();
+    virtual FwdIterator &operator++(int);
 
-            virtual FwdIterator &operator++(int);
+    virtual FwdIterator &operator--();
 
-            virtual FwdIterator &operator--();
+    virtual FwdIterator &operator--(int);
 
-            virtual FwdIterator &operator--(int);
+    virtual value_type operator*();
 
-            virtual value_type operator*();
+    virtual ~FwdIterator();
+  };
 
-            virtual ~FwdIterator();
-        };
+  class RevIterator : public FwdIterator {
 
-        class RevIterator : public FwdIterator {
+  public:
+    char *revPtr;
 
-        public:
-            char *revPtr;
+    explicit RevIterator(pointer nRevPtr = nullptr);
 
-            explicit RevIterator(pointer nRevPtr = nullptr);
+    RevIterator(const RevIterator &it);
 
-            RevIterator(const RevIterator &it);
+    bool operator==(const RevIterator &it) const;
 
-            bool operator==(const RevIterator& it) const;
+    bool operator!=(const RevIterator &it) const;
 
-            bool operator!=(const RevIterator& it) const;
+    RevIterator &operator=(const RevIterator &it);
 
-            RevIterator &operator=(const RevIterator &it);
+    RevIterator &operator++() override;
 
-            RevIterator &operator++() override;
+    RevIterator &operator++(int) override;
 
-            RevIterator &operator++(int) override;
+    RevIterator &operator--() override;
 
-            RevIterator &operator--() override;
+    RevIterator &operator--(int) override;
 
-            RevIterator &operator--(int) override;
+    value_type operator*() override;
 
-            value_type operator*() override;
+    ~RevIterator() override;
+  };
 
-            ~RevIterator() override;
-        };
+  FwdIterator FwdBegin() const;
 
-        FwdIterator FwdBegin() const;
+  FwdIterator FwdEnd() const;
 
-        FwdIterator FwdEnd() const;
+  RevIterator RevBegin() const;
 
-        RevIterator RevBegin() const;
+  RevIterator RevEnd() const;
+};
+} // namespace String
+#endif // STRINGLIBRARY_MYSTRING_H
 
-        RevIterator RevEnd() const;
-
-    };
-}
-#endif //STRINGLIBRARY_MYSTRING_H
+// concatenate
+// default
+// conversion function;
+// destructor

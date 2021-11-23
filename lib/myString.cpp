@@ -2,61 +2,60 @@
 // Created by thewa on 16/09/2021.
 //
 #include "myString.h"
-#include "iostream"
 
 using namespace String;
 using fItr = myString::FwdIterator;
 using rItr = myString::RevIterator;
 
-myString::myString() = default;
+myString::~myString() { delete[] newString; }
 
 #pragma region Aufgabenstellung 1
 
 myString::myString(const char *string) {
 
-    stringSize = 0;
-    while (string[stringSize] != '\0')
-        stringSize++;
+  stringSize = 0;
+  while (string[stringSize] != '\0')
+    stringSize++;
 
-    newString = new char[stringSize + 1];
-    for (size_t i = 0; i < stringSize; i++) {
-        newString[i] = string[i];
-    }
+  newString = new char[stringSize + 1];
+  for (size_t i = 0; i < stringSize; i++) {
+    newString[i] = string[i];
+  }
 
-    newString[stringSize] = '\0';
+  newString[stringSize] = '\0';
 }
 
 myString &myString::Concatenate(const char *string) {
 
-    size_t i = 0;
+  size_t i = 0;
 
-    char *tempString = newString;
+  char *tempString = newString;
 
-    size_t newSize = stringSize;
+  size_t newSize = stringSize;
 
-    while (string[i] != '\0') {
-        newSize++;
-        i++;
-    }
+  while (string[i] != '\0') {
+    newSize++;
+    i++;
+  }
 
-    newString = new char[newSize + 1];
+  newString = new char[newSize + 1];
 
-    for (i = 0; i < stringSize; i++) {
-        if (tempString != nullptr)
-            newString[i] = tempString[i];
-    }
+  for (i = 0; i < stringSize; i++) {
+    if (tempString != nullptr)
+      newString[i] = tempString[i];
+  }
 
-    for (i = 0; i < newSize - stringSize; i++) {
-        newString[i + stringSize] = string[i];
-    }
+  for (i = 0; i < newSize - stringSize; i++) {
+    newString[i + stringSize] = string[i];
+  }
 
-    delete (tempString);
+  delete (tempString);
 
-    newString[newSize] = '\0';
-    stringSize = newSize;
+  newString[newSize] = '\0';
+  stringSize = newSize;
 
-    //return reference to the object
-    return *this;
+  // return reference to the object
+  return *this;
 }
 
 //return value is const; function read only.
@@ -68,6 +67,7 @@ size_t myString::getLength() const {
     return stringSize;
 }
 
+myString::operator const char *() const { return newString; }
 
 #pragma endregion Aufgabenstellung 1
 
@@ -124,13 +124,15 @@ myString &myString::operator=(String::myString &&otherString) noexcept {
 }
 
 myString &String::myString::operator+(const myString &otherString) {
-    Concatenate(otherString.newString);
-    return *this;
+  myString newString(*this);
+  Concatenate(otherString.newString);
+  return *this;
 }
 
 myString &myString::operator+(const char *otherString) {
-    Concatenate(otherString);
-    return *this;
+  myString newString(*this);
+  Concatenate(otherString);
+  return *this;
 }
 
 myString &myString::operator+=(const myString &otherString) {
