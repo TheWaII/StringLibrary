@@ -15,7 +15,6 @@ int main() {
     otherString = yetAnotherString;
     std::cout << otherString.c_str() << std::endl;
 
-
 #pragma endregion
 
 #pragma region Aufgabenstellung Teil 2
@@ -26,29 +25,21 @@ int main() {
     myString s3 = s1 + s2;
     s3 += "Hello";
     const myString s4 = s3 + "World";
-    puts(s4.c_str());
+    //    puts(s4);
 
 #pragma endregion Aufgabenstellung Teil 2
 
 #pragma region Aufgabenstellung Teil 3
 
-
-    const myString test("Hello World");
-
-
-    for (myString::FwdIterator it = test.FwdBegin(); it != test.FwdEnd(); ++it) {
-        std::cout << *it << '\n';
+    const String::myString test("Hello World!");
+    for (String::myString::Iterator it = test.begin(); it != test.end(); --it) {
+      std::cout << *it << '\n';
     }
 
-    for (myString::RevIterator it = test.RevBegin(); it != test.RevEnd(); ++it) {
-        std::cout << *it << std::endl;
-    }
-
-    std::cout << (std::find(test.FwdBegin(), test.FwdEnd(), 'o') != test.FwdEnd()) << '\n';
-
+        std::cout << (std::find(test.begin(), test.end(), 'W') != test.end())
+        << '\n';
 
 #pragma endregion Aufgabenstellung Teil 3
 
     return 0;
-
 }

@@ -12,14 +12,12 @@ namespace String {
 
 class myString {
 
-private:
-  char *newString{};
-  size_t stringSize{};
-
 public:
-  myString(){};
+  myString() = default;
 
   explicit myString(const char *string);
+
+  ~myString();
 
   myString &Concatenate(const char *string);
 
@@ -33,7 +31,7 @@ public:
 
   myString(myString &&otherString) noexcept;
 
-  myString::operator const char *() const;
+  explicit operator const char *() const;
 
   myString &operator=(myString &&otherString) noexcept;
 
@@ -45,82 +43,61 @@ public:
 
   myString &operator+=(const char *otherString);
 
-  ~myString();
+  /**
+   * \Iterator
+   * I have inherited the class 'bidirectional_iterator_tag' for my Iterator
+   * class as a base template to work with. It provides me with nested type
+   * which I then implement myself.
+   *
+   * \bidirectional_iterator_tag
+   * This class inherits from forward_iterator_tag which inherits from
+   * 'input_iterator_tag'. With this, the following members are provided:\n
+   *          -> iterator_category\n
+   *          -> value_type\n
+   *          -> difference_type\n
+   *          -> pointer\n
+   *          -> reference\n
+   *
+   * @see https://www.cplusplus.com/reference/iterator/iterator/
+   * */
+  class Iterator : public std::iterator<std::bidirectional_iterator_tag, char> {
 
-  class FwdIterator {
-
-  public:
-    using iterator_category = std::input_iterator_tag;
-    using value_type = char;
-    using difference_type = std::ptrdiff_t;
-    using pointer = char *;
-    using reference = char &;
-
-    char *fwdPtr;
-
-    explicit FwdIterator(pointer nFwdPtr = nullptr);
-
-    FwdIterator(const FwdIterator &it);
-
-    bool operator==(const FwdIterator &it) const;
-
-    bool operator!=(const FwdIterator &it) const;
-
-    FwdIterator &operator=(const FwdIterator &it);
-
-    virtual FwdIterator &operator++();
-
-    virtual FwdIterator &operator++(int);
-
-    virtual FwdIterator &operator--();
-
-    virtual FwdIterator &operator--(int);
-
-    virtual value_type operator*();
-
-    virtual ~FwdIterator();
-  };
-
-  class RevIterator : public FwdIterator {
+  private:
+    char *ptr;
 
   public:
-    char *revPtr;
+    explicit Iterator(pointer iPtr);
 
-    explicit RevIterator(pointer nRevPtr = nullptr);
+    Iterator(const Iterator &it);
 
-    RevIterator(const RevIterator &it);
+    ~Iterator();
 
-    bool operator==(const RevIterator &it) const;
+    bool operator==(const Iterator &it) const;
 
-    bool operator!=(const RevIterator &it) const;
+    bool operator!=(const Iterator &it);
 
-    RevIterator &operator=(const RevIterator &it);
+    Iterator &operator=(const Iterator &it);
 
-    RevIterator &operator++() override;
+    Iterator &operator++();
 
-    RevIterator &operator++(int) override;
+    Iterator &operator++(int);
 
-    RevIterator &operator--() override;
+    Iterator &operator--();
 
-    RevIterator &operator--(int) override;
+    Iterator &operator--(int);
 
-    value_type operator*() override;
-
-    ~RevIterator() override;
+    value_type operator*();
   };
 
-  FwdIterator FwdBegin() const;
+  Iterator begin() const;
 
-  FwdIterator FwdEnd() const;
+  Iterator end() const;
 
-  RevIterator RevBegin() const;
-
-  RevIterator RevEnd() const;
+private:
+  char *newString{};
+  size_t stringSize{};
 };
-} // namespace String
-#endif // STRINGLIBRARY_MYSTRING_H
 
-// concatenate
-// default
-// conversion function;
-// destructor
+} // namespace String
+
+#endif // STRINGLIBRARY_MYSTRING_H

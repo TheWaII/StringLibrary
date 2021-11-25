@@ -3,26 +3,31 @@
 //
 #include "myString.h"
 
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "err_member_decl_does_not_match"
 using namespace String;
-using fItr = myString::FwdIterator;
-using rItr = myString::RevIterator;
+
+using Iterator = myString::Iterator;
 
 myString::~myString() { delete[] newString; }
 
 #pragma region Aufgabenstellung 1
 
-myString::myString(const char *string) {
+myString::myString(const char *string = "") {
 
   stringSize = 0;
   while (string[stringSize] != '\0')
     stringSize++;
 
   newString = new char[stringSize + 1];
-  for (size_t i = 0; i < stringSize; i++) {
+
+  size_t i = 0;
+
+  for (i = 0; i < stringSize; i++) {
     newString[i] = string[i];
   }
 
-  newString[stringSize] = '\0';
+  newString[i + 1] = '\0';
 }
 
 myString &myString::Concatenate(const char *string) {
@@ -75,13 +80,13 @@ myString::operator const char *() const { return newString; }
 
 myString::myString(const myString &otherString) : stringSize(otherString.stringSize) {
 
-    newString = new char[stringSize + 1];
+  newString = new char[stringSize];
 
-    for (unsigned int i = 0; i < stringSize; ++i) {
-        newString[i] = otherString.newString[i];
-    }
+  for (unsigned int i = 0; i < stringSize; ++i) {
+    newString[i] = otherString.newString[i];
+  }
 
-    newString[stringSize] = '\0';
+  newString[stringSize + 1] = '\0';
 }
 
 myString &myString::operator=(const myString &otherString) {
@@ -136,127 +141,61 @@ myString &myString::operator+(const char *otherString) {
 }
 
 myString &myString::operator+=(const myString &otherString) {
-    Concatenate(otherString.newString);
-    return *this;
+  Concatenate(otherString.newString);
+  return *this;
 }
 
 myString &myString::operator+=(const char *otherString) {
-    Concatenate(otherString);
-    return *this;
+  Concatenate(otherString);
+  return *this;
 }
 
 #pragma endregion Aufgabenstellung 2
 
-#pragma region Aufgabenstellung 3
+bool myString::Iterator::operator==(const Iterator &it) const {
+  return !(ptr - it.ptr);
+}
+myString::Iterator::Iterator(char *ptr = nullptr) : ptr(ptr) {}
 
-#pragma region FwdIterator
+myString::Iterator::~Iterator(){};
 
-fItr myString::FwdBegin() const {
+myString::Iterator::Iterator(const Iterator &it) : ptr(it.ptr) {}
 
-    return String::myString::FwdIterator(&newString[0]);
+bool myString::Iterator::operator!=(const Iterator &it) { return ptr - it.ptr; }
+
+Iterator &myString::Iterator::operator++() {
+
+  ++ptr;
+  return *this;
 }
 
-fItr myString::FwdEnd() const {
-    return myString::FwdIterator(&newString[stringSize]);
+Iterator &myString::Iterator::operator++(int) {
+
+  ++ptr;
+  return *this;
 }
 
-
-fItr::FwdIterator(char *nFwdPtr) : fwdPtr(nFwdPtr) {
-
+Iterator &myString::Iterator::operator--() {
+  --ptr;
+  return *this;
+}
+Iterator &myString::Iterator::operator--(int) {
+  --ptr;
+  return *this;
 }
 
-fItr::FwdIterator(const fItr &iterator) = default;
+char myString::Iterator::operator*() { return *ptr; }
 
-bool fItr::operator==(const fItr &fwdIt) const {
-    return !(fwdPtr - fwdIt.fwdPtr);
+Iterator &myString::Iterator::operator=(const Iterator &it) {
+  ptr = it.ptr;
+  return *this;
 }
 
-bool fItr::operator!=(const fItr &fwdIt) const {
-    return fwdPtr - fwdIt.fwdPtr;
+Iterator myString::begin() const {
+  Iterator it(&newString[0]);
+  return it;
 }
-
-fItr &fItr::operator=(const fItr &fwdIt) = default;
-
-fItr &fItr::operator++() {
-    fwdPtr += sizeof(char);
-    return *this;
+Iterator myString::end() const {
+  Iterator it(&newString[stringSize]);
+  return it;
 }
-
-fItr &fItr::operator++(int) {
-    fwdPtr += sizeof(char);
-    return *this;
-}
-
-fItr &fItr::operator--() {
-    fwdPtr -= sizeof(char);
-    return *this;
-}
-
-fItr &fItr::operator--(int) {
-    fwdPtr -= sizeof(int);
-    return *this;
-}
-
-char fItr::operator*() {
-    return *fwdPtr;
-}
-myString::FwdIterator::~FwdIterator() = default;
-
-#pragma endregion FwdIterator
-
-#pragma region RevIterator
-
-rItr myString::RevBegin() const {
-
-    return rItr(&newString[stringSize]);
-}
-
-rItr myString::RevEnd() const {
-    return rItr(&newString[-1]);
-}
-myString::~myString() = default;
-
-rItr::RevIterator(char *nRevPtr) : revPtr(nRevPtr) {
-
-}
-
-rItr::RevIterator(const rItr &rIt) = default;
-
-bool rItr::operator==(const myString::RevIterator &revIt) const {
-    return !(revPtr - revIt.revPtr);
-}
-
-bool rItr::operator!=(const myString::RevIterator &revIt) const {
-    return revPtr - revIt.revPtr;
-}
-
-rItr &rItr::operator++() {
-    revPtr -= sizeof(char);
-    return *this;
-}
-
-rItr &rItr::operator++(int) {
-    revPtr -= sizeof(char);
-    return *this;
-}
-
-rItr &rItr::operator--() {
-    revPtr += sizeof(char);
-    return *this;
-}
-
-rItr &rItr::operator--(int) {
-    revPtr += sizeof(char);
-    return *this;
-}
-
-char rItr::operator*() {
-    return *revPtr;
-}
-myString::RevIterator::~RevIterator() = default;
-
-rItr &rItr::operator=(const rItr &rIt) = default;
-
-#pragma endregion RevIterator
-
-#pragma endregion Aufgabenstellung 3
