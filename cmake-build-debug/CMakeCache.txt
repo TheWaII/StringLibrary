@@ -251,6 +251,9 @@ ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 StringLibrary_BINARY_DIR:STATIC=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmake-build-debug
 
 //Value Computed by CMake
+StringLibrary_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
 StringLibrary_SOURCE_DIR:STATIC=/mnt/c/Users/thewa/CLionProjects/StringLibrary
 
 //The directory containing a CMake configuration file for boost_filesystem.
@@ -293,9 +296,9 @@ CMAKE_CACHEFILE_DIR:INTERNAL=/mnt/c/Users/thewa/CLionProjects/StringLibrary/cmak
 //Major version of cmake used to create the current loaded cache
 CMAKE_CACHE_MAJOR_VERSION:INTERNAL=3
 //Minor version of cmake used to create the current loaded cache
-CMAKE_CACHE_MINOR_VERSION:INTERNAL=16
+CMAKE_CACHE_MINOR_VERSION:INTERNAL=22
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=0
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -404,7 +407,7 @@ CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_READELF
 CMAKE_READELF-ADVANCED:INTERNAL=1
 //Path to CMake installation.
-CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.16
+CMAKE_ROOT:INTERNAL=/usr/share/cmake-3.22
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
 CMAKE_SHARED_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS_DEBUG

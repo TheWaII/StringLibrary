@@ -1,10 +1,10 @@
 #define BOOST_TEST_MODULE StringLibraryTests
 
 #include "../lib/myString.h"
+#include <array>
 #include <boost/iterator.hpp>
 #include <boost/test/unit_test.hpp>
-#include<iostream>
-#include<array>
+#include <iostream>
 using namespace std;
 #include <string>
 
@@ -102,21 +102,22 @@ BOOST_AUTO_TEST_CASE(pass_operator_plus_equal) {
 BOOST_AUTO_TEST_CASE(pass_iterator_forward) {
   BOOST_TEST_MESSAGE("checking: iterator");
   const String::myString test("Hello World");
-  for (String::myString::Iterator it = test.begin(); it != test.end(); ++it){
+  for (String::myString::Iterator it = test.begin(); it != test.end(); ++it) {
     std::cout << *it << '\n';
   }
 }
 
 /**
-   * @brief Why it-- inside for-loop? \n
-   * with the -- the last char was not being printed. Therefore with this,
-   * I start printing values from end-1
+ * @brief Why it-- inside for-loop? \n
+ * with the -- the last char was not being printed. Therefore with this,
+ * I start printing values from end-1
  */
 BOOST_AUTO_TEST_CASE(pass_iterator_reverse) {
   BOOST_TEST_MESSAGE("checking: iterator");
   const String::myString test("Hello World");
-  for (String::myString::Iterator it = test.end(); it != test.begin();){
-    it--; std::cout << *it << '\n';
+  for (String::myString::Iterator it = test.end(); it != test.begin();) {
+    it--;
+    std::cout << *it << '\n';
   }
 }
 

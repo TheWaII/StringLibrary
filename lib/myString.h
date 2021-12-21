@@ -5,7 +5,7 @@
 #ifndef STRINGLIBRARY_MYSTRING_H
 #define STRINGLIBRARY_MYSTRING_H
 
-#include "gtest/gtest.h"
+#include <algorithm>
 #include <cstdio>
 
 namespace String {
@@ -13,8 +13,6 @@ namespace String {
 class myString {
 
 public:
-  myString() = default;
-
   explicit myString(const char *string);
 
   ~myString();
@@ -31,7 +29,7 @@ public:
 
   myString(myString &&otherString) noexcept;
 
-  explicit operator const char *() const;
+  operator const char *() const { return c_str(); };
 
   myString &operator=(myString &&otherString) noexcept;
 
@@ -86,7 +84,7 @@ public:
 
     Iterator &operator--(int);
 
-    value_type operator*();
+    value_type operator*() const;
   };
 
   Iterator begin() const;
