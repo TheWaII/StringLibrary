@@ -1,6 +1,5 @@
 
 
-
 #include "../lib/myString.h"
 #include <iostream>
 
