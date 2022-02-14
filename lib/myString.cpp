@@ -4,8 +4,6 @@
 #include "myString.h"
 #include <iostream>
 
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "err_member_decl_does_not_match"
 using namespace String;
 
 using Iterator = myString::Iterator;
@@ -15,28 +13,35 @@ myString::~myString() {
   std::cout << "destructor called" << std::endl;
 }
 
-#pragma region Aufgabenstellung 1
-
 myString::myString(const char *string) {
 
-  stringSize = 0;
-  while (string[stringSize] != '\0')
-    stringSize++;
+  size_t i = 0;
+  while (string[i] != '\0')
+    i++;
 
   newString = new char[stringSize + 1];
 
-  std::cout << stringSize << std::endl;
-
-  size_t i;
-
-  for (i = 0; i < stringSize + 1; i++) {
-    newString[i] = string[i];
+  size_t j;
+  for (j = 0; j < stringSize; j++) {
+    newString[j] = string[j];
   }
 
-  newString[stringSize + 1] = '\0';
+  newString[j] = '\0';
 }
 
-myString &myString::Concatenate(const char *string) {
+myString::myString(const myString &string) : myString(string.newString) {}
+
+myString::myString(myString &&otherString) noexcept {
+
+  if (this != &otherString) {
+    this->newString = otherString.newString;
+    this->stringSize = otherString.stringSize;
+    otherString.newString = nullptr;
+    otherString.stringSize = 0;
+  }
+}
+
+void myString::Concatenate(const char *string) {
 
   size_t i = 0;
 
@@ -62,31 +67,25 @@ myString &myString::Concatenate(const char *string) {
 
   newString[newSize] = '\0';
   stringSize = newSize;
+}
 
-  // return reference to the object
-  return *this;
+void myString::Concatenate(const char &string) {
+  size_t strLen = 0;
+  const char *tempString = &string;
+
+  while(tempString[strLen] != '\0')
+    ++strLen;
+
+  if(strLen == 0)
+    return;
+
+  const size_t
 }
 
 // return value is const; function read only.
 const char *myString::c_str() const { return newString; }
 
 size_t myString::getLength() const { return stringSize; }
-
-#pragma endregion Aufgabenstellung 1
-
-#pragma region Aufgabenstellung 2
-
-myString::myString(const myString &otherString)
-    : stringSize(otherString.stringSize) {
-
-  newString = new char[stringSize + 2];
-
-  for (unsigned int i = 0; i < stringSize; ++i) {
-    newString[i] = otherString.newString[i];
-  }
-
-  newString[stringSize + 1] = '\0';
-}
 
 myString &myString::operator=(const myString &otherString) {
 
@@ -103,16 +102,6 @@ myString &myString::operator=(const myString &otherString) {
   }
 
   return *this;
-}
-
-myString::myString(myString &&otherString) noexcept {
-
-  if (this != &otherString) {
-    this->newString = otherString.newString;
-    this->stringSize = otherString.stringSize;
-    otherString.newString = nullptr;
-    otherString.stringSize = 0;
-  }
 }
 
 myString &myString::operator=(String::myString &&otherString) noexcept {
@@ -139,6 +128,11 @@ myString &myString::operator+(const char *otherString) {
   return other;
 }
 
+myString &myString::operator+=(const char &otherString) {
+  myString &other(*this);
+  Concatenate(otherString);
+  return other;
+}
 myString &myString::operator+=(const myString &otherString) {
   Concatenate(otherString.newString);
   return *this;
@@ -149,9 +143,6 @@ myString &myString::operator+=(const char *otherString) {
   return *this;
 }
 
-#pragma endregion Aufgabenstellung 2
-
-#pragma region Iterator
 bool myString::Iterator::operator==(const Iterator &it) const {
   return !(ptr - it.ptr);
 }
@@ -204,5 +195,3 @@ Iterator myString::end() const {
 }
 
 char myString::Iterator::operator*() const { return *ptr; }
-
-#pragma endregion

@@ -13,29 +13,31 @@ namespace String {
 class myString {
 
 public:
+  // Clang-Tidy: Single-argument constructors must be marked explicit to avoid
+  // unintentional implicit conversions
   explicit myString(const char *string);
+  myString(const myString &str);
+  myString(myString &&otherString) noexcept;
 
   ~myString();
 
-  myString &Concatenate(const char *string);
+  void Concatenate(const char *string);
+  void Concatenate(const char &string);
 
   size_t getLength() const;
 
   const char *c_str() const;
 
-  myString(const myString &str);
-
   myString &operator=(const myString &otherString);
-
-  myString(myString &&otherString) noexcept;
+  myString &operator=(myString &&otherString) noexcept;
 
   operator const char *() const { return c_str(); };
-
-  myString &operator=(myString &&otherString) noexcept;
 
   myString &operator+(const myString &otherString);
 
   myString &operator+(const char *otherString);
+
+  myString &operator+=(const char &otherString);
 
   myString &operator+=(const myString &otherString);
 
