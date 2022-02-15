@@ -15,7 +15,7 @@ class myString {
 public:
   // Clang-Tidy: Single-argument constructors must be marked explicit to avoid
   // unintentional implicit conversions
-  explicit myString(const char *string);
+  myString(const char *string = "");
   myString(const myString &str);
   myString(myString &&otherString) noexcept;
 
@@ -25,6 +25,8 @@ public:
   void Concatenate(const char &string);
 
   size_t getLength() const;
+
+  size_t getLen(const char *string);
 
   const char *c_str() const;
 
@@ -63,10 +65,10 @@ public:
   class Iterator : public std::iterator<std::bidirectional_iterator_tag, char> {
 
   private:
-    char *ptr;
+    pointer ptr;
 
   public:
-    explicit Iterator(pointer iPtr);
+    Iterator(pointer iPtr);
 
     Iterator(const Iterator &it);
 
@@ -80,13 +82,15 @@ public:
 
     Iterator &operator++();
 
-    Iterator &operator++(int);
+    Iterator operator++(int);
 
     Iterator &operator--();
 
     Iterator &operator--(int);
 
-    value_type operator*() const;
+    reference operator*() const;
+
+    pointer  operator->() const;
   };
 
   Iterator begin() const;

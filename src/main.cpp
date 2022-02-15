@@ -39,6 +39,7 @@ int main() {
   const myString s4 = s3 + "World";
   puts(s4);
 
+
 #pragma endregion Aufgabenstellung Teil 2
 
 #pragma region Aufgabenstellung Teil 3

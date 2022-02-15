@@ -43,43 +43,57 @@ myString::myString(myString &&otherString) noexcept {
 
 void myString::Concatenate(const char *string) {
 
-  size_t i = 0;
+  const size_t strLen1 = this->getLength();
+  const size_t strLen2 = this->getLen(string);
+  const size_t strLen = strLen1 + strLen2;
 
-  char *tempString = newString;
+  char *buffer = new char[strLen + 1];
 
-  size_t sizeOfNewString = sizeof(string) / sizeof(string[0]);
+  for (size_t i = 0; i < strLen1; ++i)
+    buffer[i] = this->newString[i];
 
-  size_t newSize = stringSize + sizeOfNewString;
+  for (size_t i = 0; i < strLen1; ++i)
+    buffer[strLen1 + i] = this->newString[i];
 
-  while (string[i] != '\0') {
-    newSize++;
-    i++;
-  }
+  buffer[strLen] = '\0';
 
-  for (i = 0; i < stringSize; i++) {
-    if (tempString != nullptr)
-      newString[i] = tempString[i];
-  }
+  delete[] this->newString;
 
-  for (i = 0; i < newSize - stringSize; i++) {
-    newString[i + stringSize] = string[i];
-  }
+  this->newString = buffer;
+}
 
-  newString[newSize] = '\0';
-  stringSize = newSize;
+size_t myString::getLen(const char *string) {
+  size_t strLen = 0;
+  const char *tempString = string;
+
+  while (tempString[strLen] != '\0')
+    ++strLen;
+
+  return strLen;
 }
 
 void myString::Concatenate(const char &string) {
   size_t strLen = 0;
   const char *tempString = &string;
 
-  while(tempString[strLen] != '\0')
+  while (tempString[strLen] != '\0')
     ++strLen;
 
-  if(strLen == 0)
+  if (strLen == 0)
     return;
 
-  const size_t
+  const size_t newLen = this->getLength();
+  const size_t len = newLen + 1;
+  const auto buf = new char[len + 1];
+
+  for (size_t i = 0; i < newLen; ++i)
+    buf[i] = this->newString[i];
+
+  buf[newLen] = (&string)[0];
+  buf[len] = '\0';
+
+  delete[] this->newString;
+  this->newString = buf;
 }
 
 // return value is const; function read only.
@@ -116,12 +130,14 @@ myString &myString::operator=(String::myString &&otherString) noexcept {
   return *this;
 }
 
+// TODO: THIS
 myString &String::myString::operator+(const myString &otherString) {
   myString &other(*this);
   other.Concatenate(otherString);
   return other;
 }
 
+// TODO: THIS DOG SHIT
 myString &myString::operator+(const char *otherString) {
   myString &other(*this);
   other.Concatenate(otherString);
@@ -160,10 +176,11 @@ Iterator &myString::Iterator::operator++() {
   return *this;
 }
 
-Iterator &myString::Iterator::operator++(int) {
+Iterator myString::Iterator::operator++(int) {
 
-  ++ptr;
-  return *this;
+  const Iterator tempPtr = *this;
+  ++(*this);
+  return tempPtr;
 }
 
 Iterator &myString::Iterator::operator--() {
@@ -180,18 +197,12 @@ Iterator &myString::Iterator::operator=(const Iterator &it) {
   return *this;
 }
 
-/**
- * Starting from 0th index would remove the first letter. That is the reason to
- * start from -1th index.
- */
+Iterator myString::begin() const { return this->newString; }
 
-Iterator myString::begin() const {
-  Iterator it(&newString[-1]);
-  return it;
-}
-Iterator myString::end() const {
-  Iterator it(&newString[stringSize]);
-  return it;
-}
+Iterator myString::end() const { return &this->newString[this->getLength()]; }
 
-char myString::Iterator::operator*() const { return *ptr; }
+myString::Iterator::reference Iterator::operator*() const { return *ptr; }
+
+myString::Iterator::pointer myString::Iterator::operator->() const {
+  return ptr;
+}
