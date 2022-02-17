@@ -8,6 +8,8 @@ using namespace String;
 
 using Iterator = myString::Iterator;
 
+myString::myString() {}
+
 myString::~myString() {
   delete[] newString;
   std::cout << "destructor called" << std::endl;
@@ -32,13 +34,10 @@ myString::myString(const char *string) {
 myString::myString(const myString &string) : myString(string.newString) {}
 
 myString::myString(myString &&otherString) noexcept {
-
-  if (this != &otherString) {
-    this->newString = otherString.newString;
-    this->stringSize = otherString.stringSize;
-    otherString.newString = nullptr;
-    otherString.stringSize = 0;
-  }
+  this->newString = otherString.newString;
+  this->stringSize = otherString.stringSize;
+  otherString.newString = nullptr;
+  otherString.stringSize = 0;
 }
 
 void myString::Concatenate(const char *string) {
@@ -130,14 +129,12 @@ myString &myString::operator=(String::myString &&otherString) noexcept {
   return *this;
 }
 
-// TODO: THIS
 myString &String::myString::operator+(const myString &otherString) {
   myString &other(*this);
   other.Concatenate(otherString);
   return other;
 }
 
-// TODO: THIS DOG SHIT
 myString &myString::operator+(const char *otherString) {
   myString &other(*this);
   other.Concatenate(otherString);

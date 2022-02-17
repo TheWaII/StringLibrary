@@ -15,6 +15,7 @@ class myString {
 public:
   // Clang-Tidy: Single-argument constructors must be marked explicit to avoid
   // unintentional implicit conversions
+  myString();
   myString(const char *string = "");
   myString(const myString &str);
   myString(myString &&otherString) noexcept;
